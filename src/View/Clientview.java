@@ -13,8 +13,6 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 import java.awt.Image;
-import java.awt.print.PrinterException;
-import java.awt.print.PrinterJob;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -98,7 +96,7 @@ public class Clientview extends javax.swing.JInternalFrame {
         tables = new javax.swing.JTable();
         clientdelete = new javax.swing.JButton();
         clientupdate = new javax.swing.JButton();
-        print = new javax.swing.JButton();
+        clientdelete1 = new javax.swing.JButton();
         importpdf = new javax.swing.JButton();
         exportexcel = new javax.swing.JButton();
 
@@ -179,10 +177,10 @@ public class Clientview extends javax.swing.JInternalFrame {
             }
         });
 
-        print.setText("print");
-        print.addActionListener(new java.awt.event.ActionListener() {
+        clientdelete1.setText("print");
+        clientdelete1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                printActionPerformed(evt);
+                clientdelete1ActionPerformed(evt);
             }
         });
 
@@ -248,7 +246,7 @@ public class Clientview extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(print, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clientdelete1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(uploads, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -293,7 +291,7 @@ public class Clientview extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboclient, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(print, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(clientdelete1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(clientsave, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -421,19 +419,9 @@ public class Clientview extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_tablesMouseClicked
 
-    private void printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printActionPerformed
+    private void clientdelete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientdelete1ActionPerformed
         // TODO add your handling code here:
-        PrinterJob printing = PrinterJob.getPrinterJob();
-      boolean doprint = printing.printDialog();
-      if (doprint){
-      try {
-      printing.print();
-      }
-      catch(PrinterException ex){
-      Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
-      }
-      }
-    }//GEN-LAST:event_printActionPerformed
+    }//GEN-LAST:event_clientdelete1ActionPerformed
 
     private void importpdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importpdfActionPerformed
         // TODO add your handling code here:
@@ -552,6 +540,7 @@ public class Clientview extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton clientdelete;
+    private javax.swing.JButton clientdelete1;
     private javax.swing.JButton clientsave;
     private javax.swing.JButton clientupdate;
     private javax.swing.JComboBox<String> comboclient;
@@ -571,7 +560,6 @@ public class Clientview extends javax.swing.JInternalFrame {
     private javax.swing.JTextField lastname;
     private javax.swing.JTextField phonenumber;
     private javax.swing.JLabel pictures;
-    private javax.swing.JButton print;
     private javax.swing.JTextField regnos;
     private javax.swing.JTable tables;
     private javax.swing.JButton uploads;
